@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Hi Land !</title>
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.js">
+    </script>
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+        var keyA;
+        var keyZ;
+        var keyE
+        var player;
+        
+        var cursors; // variable pour le cursors
+        var gameOver
+        var pologlace = false
+        var changecaract = false
+        var score=0
+        var scoretext
+        var PV=2
+        var protectionglace = 0
+        var scoreText
+        var graphics
+        var doublejump = 0
+
+                    class test extends Phaser.Scene {
+
+
+            constructor() {
+
+                super("test")
+            }
+
+
+
+
+            preload() {
+                    // chargement du personnage
+                this.load.spritesheet("dude", "assets/Polo.png", {
+                    frameWidth: 32,
+                    frameHeight: 64
+                });
+
+                this.load.spritesheet("dude2", "assets/Pologlace.png", {
+                    frameWidth: 32,
+                    frameHeight: 64
+                });
+
+                this.load.spritesheet("dudeglace", "assets/Pologlace.png", {
+                    frameWidth: 32,
+                    frameHeight: 64
+                });
+
+
+
+                this.load.spritesheet("bitcoin", "assets/bitcoin.png", {
+                    frameWidth: 32,
+                    frameHeight: 32,
+                });
+
+                this.load.spritesheet("dossier", "assets/dossier.png", {
+                    frameWidth: 32,
+                    frameHeight: 32,
+                });
+
+
+                this.load.spritesheet("click", "assets/click.png", {
+                    frameWidth: 32,
+                    frameHeight: 32,
+                });
+                this.load.spritesheet("porte", "assets/portes.png", {
+                    frameWidth: 64,
+                    frameHeight: 64,
+                });
+                // chargement tuiles de jeu
+                this.load.image("Phaser_Tileset", "assets/Tileset.png");
+
+                // chargement de la carte
+                this.load.tilemapTiledJSON("carte", "assets/Monniveau.json");
+
+                this.load.image("interfacefenetre", "assets/fenetre clean.png" );
+
+                this.load.image("interfacenormal", "assets/interface full.png" );
+
+                this.load.image("interfacedegats", "assets/interface degats.png" );
+                this.load.spritesheet("virus", "assets/mobile.png", {
+                    frameWidth: 32,
+                    frameHeight: 32,
+                });
+                this.load.image('nuit', 'assets/nuit.png');
+                
+
+            }
+
+
+            create() {
+                    // chargement de la carte du niveau
+                    const carteDuNiveau = this.add.tilemap("carte");
+                    // chargement du jeu de tuiles
+                    const tileset = carteDuNiveau.addTilesetImage(
+                    "Placeholder",
+                    "Phaser_Tileset"
+                    );
+
+                    
+
+                    // chargement du calque "calque_backgroung"
+                    const backgroundLayer = carteDuNiveau.createStaticLayer(
+                    "Background",
+                    tileset
+                    );
+
+
+
+                    // chargement du calque "calque_plateformes""
+                    const plateformes = carteDuNiveau.createStaticLayer(
+                    "Plateformes",
+                    tileset
+                    );
+
+
+
+                    //affichage de l'interface
+                    this.add.image(120,75, "interfacefenetre").setScrollFactor(0);
+                    this.add.image(120,75, "interfacenormal").setScrollFactor(0);
+                    //affiche un texte à l’écran, pour le score
+                    
+                    scoreText=this.add.text(175,100,'0',{fontSize:'32px',fill:'#000'}).setScrollFactor(0);
+
+                    
+                    var doublejump = 0
+                    
+
+                    // définition des objets solides avec lesquels le personnage va interagir
+                    plateformes.setCollisionByProperty({ solide: true });
+                    plateformes.setCollisionByProperty({ bug: true });
+
+                    // création du personnage de jeu et positionnement
+                    player = this.physics.add.sprite(100,1350,"dude");
+                    
+                    keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
+
+                    // ajout du modèle de collision entre le personnage et les plates-formes et les ennemis et les piques
+                    this.physics.add.collider(player, plateformes);
+    
+                    gameOver = false;
+
+
+
+                    // ajout du modèle de collision entre le personnage et le monde
+                    player.setCollideWorldBounds(true);
+
+                    
+                    
+
+                    // animation du perso pour tourner à gauche
+                    this.anims.create({
+                    key: "left",
+                    frames: this.anims.generateFrameNumbers("dude", { start: 0, end: 3 }),
+                    frameRate: 10,
+                    repeat: -1
+                    });
+
+                    // animation du perso lorsque le personnage n'avance pas
+                    this.anims.create({
+                    key: "turn",
+                    frames: [{ key: "dude", frame: 4 }],
+                    frameRate: 20
+                    });
+
+                    // animation du perso pour tourner à droite
+                    this.anims.create({
+                    key: "right",
+                    frames: this.anims.generateFrameNumbers("dude", { start: 5, end: 8 }),
+                    frameRate: 10,
+                    repeat: -1
+                    });
+
+
+                    //animation des portes
+                    this.anims.create({
+                    key: "portesoleilouverte",
+                    frames: this.anims.generateFrameNumbers("porte", { start: 1, end: 1 }),
+                    frameRate: 10,
+                    });
+                    this.anims.create({
+                    key: "portesoleilfermee",
+                    frames: this.anims.generateFrameNumbers("porte", { start: 0, end: 0 }),
+                    frameRate: 10,
+                    });
+
+                    this.anims.create({
+                    key: "porteluneouverte",
+                    frames: this.anims.generateFrameNumbers("porte", { start: 3}),
+                    frameRate: 10,
+                    
+                    });
+                    this.anims.create({
+                    key: "portelunefermee",
+                    frames: this.anims.generateFrameNumbers("porte", { start: 1, end: 1 }),
+                    frameRate: 10,
+                    });
+
+
+                    this.portesoleil = this.physics.add.sprite(200,1503,"porte");
+                    this.portesoleil.setImmovable();
+                    this.portesoleil.body.setAllowGravity(false)
+                    this.physics.add.collider(player, this.portesoleil);
+
+                    this.portelune = this.physics.add.sprite(300,1503,"porte");
+                    this.portelune.setImmovable();
+                    this.portelune.body.setAllowGravity(false)
+                    this.physics.add.collider(player, this.portelune);
+                    
+
+
+
+
+
+
+
+
+
+
+                    this.anims.create({
+                    key: "leftg",
+                    frames: this.anims.generateFrameNumbers("dude", { start: 9, end:12 }),
+                    frameRate: 10,
+                    repeat: -1
+                    });
+
+                    // animation du perso lorsque le personnage n'avance pas
+                    this.anims.create({
+                    key: "turng",
+                    frames: [{ key: "dude", frame: 13 }],
+                    frameRate: 20
+                    });
+
+                    // animation du perso pour tourner à droite
+                    this.anims.create({
+                    key: "rightg",
+                    frames: this.anims.generateFrameNumbers("dude", { start: 15, end: 18 }),
+                    frameRate: 10,
+                    repeat: -1
+                    });
+
+                    
+
+
+
+
+
+                    // création d'un écouteur sur le cursors
+                    cursors = this.input.keyboard.createCursorKeys();
+
+                    // redimentionnement du monde avec les dimensions calculées via tiled
+                    this.physics.world.setBounds(0, 0, 1600, 1600);
+                    //  ajout du champs de la caméra de taille identique à celle du monde
+                    this.cameras.main.setBounds(0, 0, 1600, 1600);
+                    // ancrage de la caméra sur le joueur
+                    this.cameras.main.startFollow(player); 
+
+
+                    this.anims.create({
+                    key: 'virusactif',
+                    frames: this.anims.generateFrameNumbers('virus', { start: 0, end: 1 }),
+                    frameRate: 10,
+                    repeat: -1
+                    });
+
+                    var startPoint = new Phaser.Math.Vector2(800, 630);
+                    var controlPoint1 = new Phaser.Math.Vector2(1000, 630);
+                    var controlPoint2 = new Phaser.Math.Vector2(1250, 630);
+                    var endPoint = new Phaser.Math.Vector2(1500, 630);
+
+                    var curve = new Phaser.Curves.CubicBezier(startPoint, controlPoint1, controlPoint2, endPoint);
+
+                    var graphics = this.add.graphics();
+
+
+
+                    this.followvirus = this.add.follower(curve, 500, 1500, 'virus').setInteractive();
+                    this.physics.add.existing(this.followvirus);
+                    this.followvirus.body.setAllowGravity(false)
+                    this.followvirus.anims.play('virusactif', true)
+                    var shape = new Phaser.Geom.Circle(96,96,96);
+                    this.followvirus.setInteractive(shape, Phaser.Geom.Circle.Contains);
+                    this.followvirus.setSize(32, 32);
+                    this.physics.add.collider(player, this.followvirus,this.degats,null,this);
+                    
+
+                    this.followvirus.startFollow({
+                        duration: 5000,
+                        yoyo: true,
+                        ease: 'Sine.easeInOut',
+                        repeat : -1
+                    });
+
+                    this.nuit = this.add.sprite(550, 475, 'nuit').setScrollFactor(0);
+                    this.nuit.alpha = 0.8;
+                    this.nuit.visible = false;
+
+
+                    
+
+            }
+
+            update() {
+                    console.log(pologlace)
+                    console.log(doublejump)
+
+                if (keyA.isDown && changecaract == false) {
+                    pologlace = true
+                    setTimeout(() => {
+                    changecaract = true
+                                }, 400);
+                            
+                
+                }
+                else if (keyA.isDown && changecaract == true) {
+                    pologlace = false
+                    setTimeout(() => {
+                    changecaract = false
+                                }, 400);
+                            
+
+                }
+
+                if (pologlace == true){
+                    this.nuit.visible = true;
+                        if (cursors.left.isDown) {
+                        player.setVelocityX(-160);
+                        player.anims.play("leftg", true);
+
+                        // à droite
+                    } else if (cursors.right.isDown) {
+                        player.setVelocityX(160);
+                        player.anims.play("rightg", true);
+                    }
+                    // immoobile
+                    else {
+                        player.setVelocityX(0);
+                        player.anims.play("turng");
+                    }
+                    // en saut (important : blocked doown au lieu de tuoching down)
+                    if (cursors.up.isDown && player.body.blocked.down) {
+                        player.setVelocityY(-50);
+                    }
+                    if ((cursors.up.isDown && player.body.blocked.down)){
+                            //si touche haut appuyée ET que le perso touche le sol
+                            player.setVelocityY(-300); //alors vitesse verticale négative
+                    }
+
+                    //changement etat des portes
+                    
+
+                    this.portelune.anims.play('portelunefermee', true)
+                    this.portelune.setOffset(0,-1000);
+
+                    this.portesoleil.anims.play('portesoleilfermee', true)
+                    this.portesoleil.setOffset(0,0);
+                }
+                    else if (pologlace == false){
+                        this.nuit.visible = false;
+                    // a gauche
+                        if (cursors.left.isDown) {
+                        player.setVelocityX(-160);
+                        player.anims.play("left", true);
+
+                        // à droite
+                        } else if (cursors.right.isDown) {
+                        player.setVelocityX(160);
+                        player.anims.play("right", true);
+                        }
+                        // immoobile
+                        else {
+                        player.setVelocityX(0);
+                        player.anims.play("turn");
+                        }
+                        //lorsdupremier saut, possibilité de double jump
+                        if ((cursors.up.isDown && player.body.blocked.down)){
+                            player.setVelocityY(-300);
+                            doublejump = 0
+                            setTimeout(() => {
+                                doublejump = 1
+                               
+                                }, 300);
+                        }
+                        //Doublejump effectuer, un seul disponible après utilisation !
+                        if ((cursors.up.isDown && doublejump == 1)){
+                                    player.setVelocityY(-300);
+                                    doublejump = 0
+                        }
+                        if ((player.body.blocked.down)){
+                                    doublejump = 1
+                        }
+
+
+
+
+
+
+
+                        
+                        //changement etat des portes
+                        this.portesoleil.anims.play('portesoleilouverte', true)
+                        this.portesoleil.setOffset(0,-1000);
+                        
+
+                        this.portelune.anims.play('porteluneouverte', true)
+                        this.portelune.setOffset(0,0);
+                        
+                    }
+                
+
+
+                if (gameOver){return;}
+
+                
+
+
+
+                        
+
+
+
+                if (PV == 0){
+                    this.physics.pause();
+                player.setTint(0xff0000);
+                player.anims.play('turn');
+                gameOver = true;
+                }
+                }
+
+                soin(player, dossier){
+                if (PV >= 2){
+                dossier.disableBody(true, true);
+                }else{
+                dossier.disableBody(true, true);
+                this.add.image(120,75, "interfacenormal").setScrollFactor(0);
+                PV += 1
+                console.log("SOIN");
+                }
+                }
+
+                degats(){
+
+
+                if (PV <= 0){
+                player.setTint(0xff0000);
+                player.anims.play('turn');
+                gameOver = true;
+                }else {
+                
+                PV -= 1
+                virus.disableBody(true, true); //Le virus disparait après 
+                this.add.image(120,75, "interfacedegats").setScrollFactor(0);
+                }
+                // if (player.setTint(0xff9797CC)){
+                // player.setTint()
+                //PV += 1
+                //} //else {
+                //PV -= 1
+                //virus.disableBody(true, true);
+                //}
+
+
+                }
+
+                collectcoin(player, bitcoin){
+                bitcoin.disableBody(true, true); // l’étoile disparaît
+                score += 1; //augmente le score de 10
+                scoreText.setText('' + score); //met à jour l’affichage du score
+            }
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        var config = {
+            type: Phaser.AUTO,
+            width: 896, height: 448,
+            physics: {
+                default: 'arcade',
+                arcade: {
+                    gravity: { y: 600 },
+                    debug: true
+                }
+            },
+
+            scene: [test]
+        };
+
+        const Game = new Phaser.Game(config);
+
+
+
+
+        gameOver = false;
+        score = 0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
