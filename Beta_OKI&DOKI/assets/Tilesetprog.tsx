@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.9" tiledversion="1.9.2" name="Placeholder" tilewidth="32" tileheight="32" tilecount="4988" columns="10">
+<tileset version="1.9" tiledversion="1.9.2" name="Placeholder" tilewidth="32" tileheight="32" tilecount="80" columns="10">
  <editorsettings>
   <export target="Monniveau.json" format="json"/>
  </editorsettings>
@@ -204,13 +204,15 @@
  </tile>
  <tile id="38">
   <properties>
-   <property name="eau" type="bool" value="true"/>
+   <property name="eau" type="bool" value="false"/>
+   <property name="grimpe" type="bool" value="true"/>
    <property name="solide" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="39">
   <properties>
-   <property name="eau" type="bool" value="true"/>
+   <property name="eau" type="bool" value="false"/>
+   <property name="grimpe" type="bool" value="true"/>
    <property name="solide" type="bool" value="true"/>
   </properties>
  </tile>
@@ -257,13 +259,15 @@
  </tile>
  <tile id="48">
   <properties>
-   <property name="eau" type="bool" value="true"/>
+   <property name="eau" type="bool" value="false"/>
+   <property name="grimpe" type="bool" value="true"/>
    <property name="solide" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="49">
   <properties>
-   <property name="eau" type="bool" value="true"/>
+   <property name="eau" type="bool" value="false"/>
+   <property name="grimpe" type="bool" value="true"/>
    <property name="solide" type="bool" value="true"/>
   </properties>
  </tile>
