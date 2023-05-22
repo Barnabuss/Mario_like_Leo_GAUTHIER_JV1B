@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.9" tiledversion="1.9.2" name="Placedoki" tilewidth="32" tileheight="32" tilecount="208" columns="16">
- <image source="Placedoki.png" width="512" height="416"/>
+<tileset version="1.9" tiledversion="1.9.2" name="Placedoki" tilewidth="32" tileheight="32" tilecount="312" columns="24">
+ <image source="Placedoki.png" width="768" height="416"/>
  <tile id="0">
   <properties>
    <property name="solide" type="bool" value="true"/>
@@ -97,26 +97,6 @@
   </properties>
  </tile>
  <tile id="19">
-  <properties>
-   <property name="solide" type="bool" value="true"/>
-  </properties>
- </tile>
- <tile id="20">
-  <properties>
-   <property name="solide" type="bool" value="true"/>
-  </properties>
- </tile>
- <tile id="21">
-  <properties>
-   <property name="solide" type="bool" value="true"/>
-  </properties>
- </tile>
- <tile id="22">
-  <properties>
-   <property name="solide" type="bool" value="true"/>
-  </properties>
- </tile>
- <tile id="23">
   <properties>
    <property name="solide" type="bool" value="true"/>
   </properties>
@@ -221,26 +201,6 @@
    <property name="solide" type="bool" value="true"/>
   </properties>
  </tile>
- <tile id="44">
-  <properties>
-   <property name="solide" type="bool" value="true"/>
-  </properties>
- </tile>
- <tile id="45">
-  <properties>
-   <property name="solide" type="bool" value="true"/>
-  </properties>
- </tile>
- <tile id="46">
-  <properties>
-   <property name="solide" type="bool" value="true"/>
-  </properties>
- </tile>
- <tile id="47">
-  <properties>
-   <property name="solide" type="bool" value="true"/>
-  </properties>
- </tile>
  <tile id="48">
   <properties>
    <property name="solide" type="bool" value="true"/>
@@ -323,74 +283,82 @@
  </tile>
  <tile id="64">
   <properties>
-   <property name="grimpe" type="bool" value="true"/>
+   <property name="solide" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="65">
   <properties>
-   <property name="grimpe" type="bool" value="true"/>
    <property name="solide" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="66">
   <properties>
-   <property name="grimpe" type="bool" value="true"/>
    <property name="solide" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="67">
-  <properties>
-   <property name="grimpe" type="bool" value="true"/>
-  </properties>
- </tile>
- <tile id="68">
-  <properties>
-   <property name="solide" type="bool" value="true"/>
-  </properties>
- </tile>
- <tile id="69">
   <properties>
    <property name="solide" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="72">
   <properties>
-   <property name="grimpe" type="bool" value="true"/>
+   <property name="solide" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="73">
   <properties>
-   <property name="grimpe" type="bool" value="true"/>
+   <property name="solide" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="74">
   <properties>
-   <property name="grimpe" type="bool" value="true"/>
+   <property name="solide" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="75">
   <properties>
-   <property name="grimpe" type="bool" value="true"/>
+   <property name="solide" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="76">
+  <properties>
+   <property name="solide" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="77">
+  <properties>
+   <property name="solide" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="78">
+  <properties>
+   <property name="solide" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="79">
+  <properties>
+   <property name="solide" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="80">
   <properties>
-   <property name="grimpe" type="bool" value="true"/>
+   <property name="solide" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="81">
   <properties>
-   <property name="grimpe" type="bool" value="true"/>
+   <property name="solide" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="82">
   <properties>
-   <property name="grimpe" type="bool" value="true"/>
+   <property name="solide" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="83">
   <properties>
-   <property name="grimpe" type="bool" value="true"/>
+   <property name="solide" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="84">
@@ -403,24 +371,34 @@
    <property name="solide" type="bool" value="true"/>
   </properties>
  </tile>
+ <tile id="86">
+  <properties>
+   <property name="solide" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="87">
+  <properties>
+   <property name="solide" type="bool" value="true"/>
+  </properties>
+ </tile>
  <tile id="88">
   <properties>
-   <property name="grimpe" type="bool" value="true"/>
+   <property name="solide" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="89">
   <properties>
-   <property name="grimpe" type="bool" value="true"/>
+   <property name="solide" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="90">
   <properties>
-   <property name="grimpe" type="bool" value="true"/>
+   <property name="solide" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="91">
   <properties>
-   <property name="grimpe" type="bool" value="true"/>
+   <property name="solide" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="96">
@@ -431,11 +409,13 @@
  <tile id="97">
   <properties>
    <property name="grimpe" type="bool" value="true"/>
+   <property name="solide" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="98">
   <properties>
    <property name="grimpe" type="bool" value="true"/>
+   <property name="solide" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="99">
@@ -473,38 +453,6 @@
    <property name="grimpe" type="bool" value="true"/>
   </properties>
  </tile>
- <tile id="112">
-  <properties>
-   <property name="grimpe" type="bool" value="true"/>
-  </properties>
- </tile>
- <tile id="113">
-  <properties>
-   <property name="grimpe" type="bool" value="true"/>
-   <property name="solide" type="bool" value="true"/>
-  </properties>
- </tile>
- <tile id="114">
-  <properties>
-   <property name="grimpe" type="bool" value="true"/>
-   <property name="solide" type="bool" value="true"/>
-  </properties>
- </tile>
- <tile id="115">
-  <properties>
-   <property name="grimpe" type="bool" value="true"/>
-  </properties>
- </tile>
- <tile id="116">
-  <properties>
-   <property name="solide" type="bool" value="true"/>
-  </properties>
- </tile>
- <tile id="117">
-  <properties>
-   <property name="solide" type="bool" value="true"/>
-  </properties>
- </tile>
  <tile id="120">
   <properties>
    <property name="grimpe" type="bool" value="true"/>
@@ -523,6 +471,16 @@
  <tile id="123">
   <properties>
    <property name="grimpe" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="124">
+  <properties>
+   <property name="solide" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="125">
+  <properties>
+   <property name="solide" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="128">
@@ -547,12 +505,12 @@
  </tile>
  <tile id="137">
   <properties>
-   <property name="solide" type="bool" value="true"/>
+   <property name="grimpe" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="138">
   <properties>
-   <property name="solide" type="bool" value="true"/>
+   <property name="grimpe" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="144">
@@ -585,22 +543,22 @@
    <property name="solide" type="bool" value="true"/>
   </properties>
  </tile>
- <tile id="150">
+ <tile id="152">
   <properties>
-   <property name="solide" type="bool" value="true"/>
+   <property name="grimpe" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="153">
   <properties>
-   <property name="solide" type="bool" value="true"/>
+   <property name="grimpe" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="154">
   <properties>
-   <property name="solide" type="bool" value="true"/>
+   <property name="grimpe" type="bool" value="true"/>
   </properties>
  </tile>
- <tile id="160">
+ <tile id="155">
   <properties>
    <property name="grimpe" type="bool" value="true"/>
   </properties>
@@ -615,17 +573,34 @@
    <property name="grimpe" type="bool" value="true"/>
   </properties>
  </tile>
- <tile id="163">
+ <tile id="168">
   <properties>
    <property name="grimpe" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="169">
   <properties>
+   <property name="grimpe" type="bool" value="true"/>
    <property name="solide" type="bool" value="true"/>
   </properties>
  </tile>
  <tile id="170">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+   <property name="solide" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="171">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="172">
+  <properties>
+   <property name="solide" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="173">
   <properties>
    <property name="solide" type="bool" value="true"/>
   </properties>
@@ -650,14 +625,264 @@
    <property name="grimpe" type="bool" value="true"/>
   </properties>
  </tile>
- <tile id="185">
+ <tile id="192">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="193">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="194">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="195">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="200">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+   <property name="solide" type="bool" value="false"/>
+  </properties>
+ </tile>
+ <tile id="201">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+   <property name="solide" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="202">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+   <property name="solide" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="203">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="208">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="209">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="210">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="211">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="216">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="217">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="218">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="219">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="220">
   <properties>
    <property name="solide" type="bool" value="true"/>
   </properties>
  </tile>
- <tile id="186">
+ <tile id="221">
   <properties>
    <property name="solide" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="222">
+  <properties>
+   <property name="solide" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="224">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="225">
+  <properties>
+   <property name="solide" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="226">
+  <properties>
+   <property name="solide" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="227">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="232">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="233">
+  <properties>
+   <property name="solide" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="234">
+  <properties>
+   <property name="solide" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="235">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="240">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="241">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="242">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="243">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="248">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="249">
+  <properties>
+   <property name="solide" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="250">
+  <properties>
+   <property name="solide" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="251">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="256">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="257">
+  <properties>
+   <property name="solide" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="258">
+  <properties>
+   <property name="solide" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="259">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="264">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="265">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="266">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="267">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="272">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="273">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+   <property name="solide" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="274">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+   <property name="solide" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="275">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="280">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="281">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="282">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
+  </properties>
+ </tile>
+ <tile id="283">
+  <properties>
+   <property name="grimpe" type="bool" value="true"/>
   </properties>
  </tile>
 </tileset>
